@@ -1,0 +1,233 @@
+.bg-img {
+    /* The image used */
+    background-image: url("background.PNG");
+    position: fixed;
+
+
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+
+
+    background-size: 100%;
+
+    /* Needed to position the navbar */
+
+}
+.bg-img3 {
+    /* The image used */
+    background-image: url("contact us.PNG");
+    position: fixed;
+
+
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+
+
+    background-size: 100%;
+
+    /* Needed to position the navbar */
+
+}
+
+.bg-img2 {
+    /* The image used */
+    background-image: url("bg2.PNG");
+
+    position: fixed;
+
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+
+
+    background-size: 100%;
+
+    /* Needed to position the navbar */
+
+}
+
+
+
+.container {
+
+
+    margin-top: 80px;
+    margin-left: 500px;
+    width: auto;
+    height: auto;
+}
+
+/* The navbar */
+
+/* Navbar links */
+.topnav a {
+    float: left;
+    margin-top: 80px;
+    font-family: Ancillary;
+    margin-left: 50px;
+    margin-right: 50px;
+    color: #5B0A36;
+    text-align: revert;
+    padding: 4px 40px;
+    text-decoration: none;
+    font-size: 30px;
+    position: relative;
+}
+.topnav a:hover{
+    text-decoration: underline;
+}
+
+
+
+.slogan1 {
+    line-height: 15%;
+    left: 10px;
+    margin-top: 450px;
+    margin-left: 300px;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: #5B0A36;
+    font-size: 60px;
+    height: auto;
+}
+.slogan11 {
+    line-height: 15%;
+    left: 10px;
+    margin-top: 450px;
+    margin-left: 300px;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: #5B0A36;
+    font-size: 60px;
+    height: auto;
+}
+
+.slogan2 {
+
+    line-height: 10%;
+    margin-left: 340px;
+    font-family: sans-serif;
+    color: #5B0A36;
+    font-size: 60px;
+
+}
+.slogan3 {
+        line-height: 10%;
+    margin-left: 390px;
+
+    font-family: sans-serif;
+    color: #514F50;
+    font-size: 50px;
+
+}
+.register {
+
+    margin-top: 0px;
+    margin-left: 650px;
+    width: auto;
+    height: 15px;
+}
+.nav  a{
+    float: left;
+    margin-top: 10px;
+    font-family: Ancillary;
+    margin-left: 100px;
+    margin-right: 100px;
+    border-radius:10px;
+    color: #5B0A36;
+    background-color:white ;
+    text-align: revert;
+    border: 1px solid #5B0A36;
+    padding: 4px 40px;
+    text-decoration: none;
+    font-size: 30px;
+    position: relative;
+}
+.nav a:hover{
+    background-color: #5B0A36;
+    color: white;
+    text-decoration: none;
+
+}
+.createAcc {
+    line-height: 15%;
+
+    margin-top: 150px;
+    margin-left: 100px;
+
+    font-family: sans-serif;
+    color: #5B0A36;
+    font-size: 40px;
+
+}
+.connect {
+    line-height: 15%;
+
+    margin-top: 240px;
+    margin-left: 100px;
+
+    font-family: sans-serif;
+    color: #5B0A36;
+    font-size: 40px;
+
+}
+.dateof {
+    line-height: 15%;
+    margin-top: 5px;
+    margin-left: 900px;
+    font-family: sans-serif;
+    color: black;
+    font-size: 14px;
+
+}
+.formdecoration {
+    line-height: 15%;
+    margin-left:900px ;
+
+    margin-top: 10px;
+    color: #5B0A36;
+    height: auto;
+}
+.reg  a{
+    float: left;
+    margin-top: 10px;
+    font-family: Ancillary;
+    margin-left: 1000px;
+    margin-right: 1000px;
+    border-radius:10px;
+    color:white;
+    background-color:  #5B0A36 ;
+    text-align: revert;
+    border: 1px solid #5B0A36;
+    padding: 4px 40px;
+    text-decoration: none;
+    font-size: 30px;
+    position: relative;
+}
+.reg a:hover{
+    background-color: white;
+    color:   #5B0A36;
+    text-decoration: none;
+
+}
+.card {
+    align-content: flex-start;
+    line-height: 15%;
+    margin-left:100px ;
+    margin-right: 300px;
+    margin-top: 130px;
+    color: #5B0A36;
+
+}
+
+.card2 {
+    align-content: flex-start;
+    line-height: 15%;
+    margin-left:100px ;
+    margin-right: 300px;
+    margin-top: 30px;
+    color: #5B0A36;
+
+}
