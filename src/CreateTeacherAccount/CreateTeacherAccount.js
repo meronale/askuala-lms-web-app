@@ -71,7 +71,7 @@ const CreateTeacherAccount = () => {
 
                     <div className="register">
                         <div className="topnav">
-                            <a href="#home">Home</a>
+                            <a href="/home">Home</a>
                             <a href="/Classes">Classes</a>
                             <a href="/CreateContactUs">Contact Us</a>
                             <a href="/ListStudents">Login</a></div>
