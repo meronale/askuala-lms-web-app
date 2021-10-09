@@ -7,6 +7,8 @@ import CreateStudentAccount from "./CreateStudentAccount/CreateStudentAccount.js
 import CreateContactUs from "./CreateContactUs/CreateContactUs.js";
 import ListStudents from "./ListStudents/ListStudents";
 import Classes from "./Classes/Classes";
+import CreateTeacherAccount from "./CreateTeacherAccount/CreateTeacherAccount";
+import ListTeachers from "./ListTeachers/ListTeachers";
 function App() {
 
     return (
@@ -16,6 +18,9 @@ function App() {
                     <Route path="/CreateStudentAccount">
                         <CreateStudentAccount />
                     </Route>
+                    <Route path="/CreateTeacherAccount">
+                        <CreateTeacherAccount />
+                    </Route>
                     <Route path="/CreateContactUs">
                         <CreateContactUs/>
                     </Route>
@@ -24,11 +29,18 @@ function App() {
                         <ListStudents />
 
                     </Route>
+                    <Route path="/ListTeachers">
+
+                        <ListTeachers />
+
+                    </Route>
                     <Route path="/Classes">
 
                         <Classes />
 
                     </Route>
+
+
 
                 </switch>
                     <switch>
@@ -38,10 +50,11 @@ function App() {
 
                             <div className="register">
                                 <div className="topnav">
-                                        <a href="/App"> Home </a>
+
                                         <a href="/Classes">Classes</a>
                                         <a href="/CreateContactUs">Contact Us</a>
                                         <a href="/ListStudents">Students</a>
+                                        <a href="/ListTeachers">Teachers</a>
 
                                     </div>
                             </div>
@@ -54,7 +67,10 @@ function App() {
 
                             <div className="register">
                                 <div className="nav">
-                                    <a href="/CreateStudentAccount"> Get started </a>
+                                    <a href="/CreateStudentAccount"> I am a Student </a>
+                                </div>
+                                <div className="nav">
+                                    <a href="/CreateTeacherAccount"> I am a Teacher </a>
                                 </div>
                             </div>
                         </div>

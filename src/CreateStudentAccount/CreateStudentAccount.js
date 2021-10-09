@@ -29,7 +29,7 @@ const CreateStudentAccount = () => {
 
             if (password === confirmPassword) {
                 axios.post(
-                    "http://localhost:8080/api/studentAccount/create",
+                    "https://askuala-web.herokuapp.com/api/studentAccount/create",
                     {
 
                         "firstName": firstName,
@@ -67,10 +67,10 @@ const CreateStudentAccount = () => {
 
                 <div className="register">
                     <div className="topnav">
-                        <a href="#home">Home</a>
                         <a href="/Classes">Classes</a>
                         <a href="/CreateContactUs">Contact Us</a>
-                        <a href="/ListStudents">Login</a></div>
+                        <a href="/ListStudents">Students</a>
+                        <a href="/ListTeachers">Teacher</a></div>
                 </div>
 
                 <div className="createAcc">
@@ -157,8 +157,7 @@ const CreateStudentAccount = () => {
                         type={"date"}
                         autoFocus={true}
                         value={registrationDate}
-                        placeholder={"your phone"}
-                        onChange={(event => setDateOfBirth(event.target.value))}
+                        onChange={(event => setRegistrationDate(event.target.value))}
                         variant="outlined"/>
                                 </div>
                                     <div className="formdecoration">
@@ -182,7 +181,7 @@ const CreateStudentAccount = () => {
                         onChange={(event => setConfirmPassword(event.target.value))}
                         variant="outlined"/>
                                         </div>
-                </div>
+
                 <div className="register">
                     <div className="reg">
                         <button name="Register"
@@ -192,9 +191,10 @@ const CreateStudentAccount = () => {
                         >Register</button>
 
                     </div>
+
                 </div>
 
-
+            </div>
 
       </form>
 

@@ -25,7 +25,7 @@ const CreateContactUs = () => {
                 // string is empty, do something
 
                 axios.post(
-                    "http://localhost:8080/api/contactUs/create",
+                    "https://askuala-web.herokuapp.com/api/contactUs/create",
                     {
 
                         "fullName": fullName,

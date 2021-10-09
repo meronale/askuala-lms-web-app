@@ -34,7 +34,7 @@ const ListStudents = () =>{
                         <a href="#home">Home</a>
                         <a href="/Classes">Classes</a>
                         <a href="/CreateContactUs">Contact Us</a>
-                        <a href="/ListStudents">Student</a></div>
+                        <a href="/ListTeachers">Teachers</a></div>
             </div>
         <div className="createAcc">
             <p> List of Student </p>
