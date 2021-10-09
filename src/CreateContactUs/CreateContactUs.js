@@ -107,7 +107,7 @@ const CreateContactUs = () => {
 
                 <div className="register">
                     <div className="nav">
-                        <a
+                        <a href
                            value={isSubmitClicked}
                            onClick={() => setIsSubmitClicked(true)}
                         >Submit</a>
