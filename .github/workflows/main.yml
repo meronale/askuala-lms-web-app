@@ -2,13 +2,10 @@ name: CI/CD
 
 # Controls when the action will run.
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
+
   push:
     branches: [ main ]
-#  pull_request:
-#    branches: [ main ]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   build_test:
     # The type of runner that the job will run on
@@ -30,8 +27,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      #      - name: Run the tests
-      #        run: npm test --passWithNoTests
+
 
       - name: Build
         run: npm run build
@@ -46,6 +42,5 @@ jobs:
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
           github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
-          # Go here to generate a Personal access token https://github.com/settings/tokens
-          # Add it in Secrets with ACTIONS_DEPLOY_ACCESS_TOKEN name
-          repository: ${{ github.repository }}    # The github.repository variable will automatically get the name of your repository.
+
+          repository: ${{ github.repository }}
