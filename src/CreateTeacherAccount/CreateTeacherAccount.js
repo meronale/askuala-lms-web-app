@@ -60,7 +60,7 @@ const CreateTeacherAccount = () => {
 
 
         }
-    }, [firstName, middleName, lastName, email, department, phoneNumber, dateOfBirth, registrationDate, password, confirmPassword, isSubmitClicked]);
+    }, [firstName, middleName, lastName, email, department, phoneNumber,certification,experience, dateOfBirth, registrationDate, password, confirmPassword, isSubmitClicked]);
 
 
     return (
