@@ -66,7 +66,7 @@ function App() {
                                         <a href="/CreateContactUs">Contact Us</a>
                                         <a href="/ListStudents">Students</a>
                                         <a href="/ListTeachers">Teachers</a>
-                                        <a href="/Login">Login</a>
+
                                         <a href="/SignIn">SignIn</a>
                                     <a href="/Job">jo</a>
 
