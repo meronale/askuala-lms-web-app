@@ -47,11 +47,6 @@ function App() {
                         <SignIn />
 
                     </Route>
-                    <Route path="/Login">
-
-                        <Login />
-
-                    </Route>
                     <Route path="/Job">
 
                         <Job />
