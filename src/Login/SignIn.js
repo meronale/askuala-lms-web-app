@@ -48,22 +48,23 @@ const SignIn = () => {
 
     var flag = false;
 
-    useEffect(() => {
+    useEffect(() =>
         {
             if (isSubmitClicked === true) {
 
-                if (roleType === 'teacherAccount') {
+                if (roleType === 'teacherAccount')
                     {
                         data.forEach((row) => {
                             if ((row.email === email) && (row.password === password)) {
                                 VariableGlobals.x = row.id;
+                                // eslint-disable-next-line react-hooks/exhaustive-deps
                                 flag = true;
                                 setIsSubmitClicked(false);
                                 history.push('/classes');
                             }
                         });
                     }
-                } else if (roleType === 'studentAccount') {
+                 else if (roleType === 'studentAccount')
                     {
                         data.forEach((row) => {
                             if ((row.email === email) && (row.password === password)) {
@@ -74,7 +75,7 @@ const SignIn = () => {
                             }
                         });
                     }
-                } else if (roleType === 'admin') {
+                 else if (roleType === 'admin')
                     {
                         data.forEach((row) => {
                             if ((row.email === email) && (row.password === password)) {
@@ -85,14 +86,14 @@ const SignIn = () => {
                             }
                         });
                     }
-                }
+
                 if (flag === false) {
                     alert("INCORRECT EMAIL OR PASSWORD");
                     setIsSubmitClicked(false);
                 }
             }
         }
-    }, [email, password, isSubmitClicked]);
+    , [email, password, isSubmitClicked]);
 
     return (
 

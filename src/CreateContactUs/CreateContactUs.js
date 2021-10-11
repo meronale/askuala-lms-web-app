@@ -34,32 +34,30 @@ const CreateContactUs = () => {
     const [isSubmitClicked, setIsSubmitClicked] = useState(false);
 
 
-    useEffect(() => {
-        if (isSubmitClicked === true) {
+    useEffect(() =>
+            {
+                if (isSubmitClicked === true) {
 
 
-            axios.post(
-                "http://localhost:8080/api/contactUs/create",
-                {
+                     axios.post(
+                        "http://localhost:8080/api/contactUs/create",
+                        {
 
-                    "fullName": fullName,
-                    "email": email,
-                    "message": message,
-                }
+                            "fullName": fullName,
+                            "email": email,
+                            "message": message,
+                    }
+                )
 
-            )
+                    .then((response) => console.log(response.data))
+                    .catch((error) => {
+                        console.log(error);
+                        alert("not submitted correctly: " + error.error);
+                    })
 
-                .then((response) => console.log(response.data))
-                .catch((error) => {
-                    console.log(error);
-                    alert("not submitted correctly: " + error.error);
-                })
-
-
-
-
-        }
-        },[fullName,email,message, isSubmitClicked]);
+            }
+            }
+        ,[fullName,email,message, isSubmitClicked]);
 
 
 
@@ -72,7 +70,7 @@ const CreateContactUs = () => {
 
                 <div className="register">
                     <div className="topnav">
-                        <a href="/App">Home</a>
+                        <a href="/">Home</a>
                         <a href="/Classes">Classes</a>
                         <a href="/ListStudents">Students</a></div>
                 </div>

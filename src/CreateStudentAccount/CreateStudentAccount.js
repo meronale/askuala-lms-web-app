@@ -8,9 +8,24 @@ import {Route} from "react-router-dom";
 import {Router} from "@mui/icons-material";
 import {Button} from "@mui/material";
 import CreateContactUs from "../CreateContactUs/CreateContactUs";
+import {useHistory} from "react-router";
+import {makeStyles} from "@mui/styles";
 
+const useStyles= makeStyles(
+    ()=>({
+        textField: {
+            margin: 20
+        },
+        button:{
+            padding:2,
+            color:"#5B0A36"
+        }
+
+    }));
 
 const CreateStudentAccount = () => {
+    let history = useHistory();
+    const  classes= useStyles();
     const [firstName, setFirstName] = useState('');
     const [middleName, setMiddleName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -24,43 +39,43 @@ const CreateStudentAccount = () => {
     const [isSubmitClicked, setIsSubmitClicked] = useState(false);
 
 
-    useEffect(() => {
-        if (isSubmitClicked === true) {
+    useEffect(() =>
+        {
+            if (isSubmitClicked === true) {
 
-            if (password === confirmPassword) {
-                axios.post(
-                    "http:localhost:8080/api/studentAccount/create",
-                    {
-
-                        "firstName": firstName,
-                        "middleName": middleName,
-                        "lastName": lastName,
-                        "email": email,
-                        "department": department,
-                        "phoneNumber": phoneNumber,
-                        "dateOfBirth": dateOfBirth,
-                        "registrationDate": registrationDate,
-                        "password": password
+                if (password === confirmPassword) {
 
 
-                    }
-                )
-                    .then((response) => {
-                            console.log(response.data);
-                            alert("Account is created with id: " + response.data.id);
+                    axios.post(
+                        "http:localhost:8080/api/studentAccount/create",
+                        {
+
+                            "firstName": firstName,
+                            "middleName": middleName,
+                            "lastName": lastName,
+                            "email": email,
+                            "department": department,
+                            "phoneNumber": phoneNumber,
+                            "dateOfBirth": dateOfBirth,
+                            "registrationDate": registrationDate,
+                            "password": password
+
+
                         }
                     )
-                    .catch((error) => {
-                        console.log(error);
-                        //alert(error.error);
-                    })
-                setIsSubmitClicked(false);
-            } else {
-                alert("Password and Confirm Password are not the same!");
-                setIsSubmitClicked(false)
+                        .then((response) => console.log(response.data))
+                        .catch((error) => {
+                            console.log(error);
+                            alert("not submitted correctly: " + error.error);
+                        })
+                    setIsSubmitClicked(false);
+                } else {
+                    alert("Password and Confirm Password are not the same!");
+                    setIsSubmitClicked(false);
+                }
             }
         }
-    }, [firstName, middleName, lastName, email, department, phoneNumber, dateOfBirth, registrationDate, password, confirmPassword, isSubmitClicked]);
+    , [firstName, middleName, lastName, email, department, phoneNumber, dateOfBirth, registrationDate, password, confirmPassword, isSubmitClicked]);
 
 
     return (
@@ -88,7 +103,7 @@ const CreateStudentAccount = () => {
                         label={"First Name"}
                         value={firstName}
                         placeholder={"your name"}
-                        onChange={(event => setFirstName(event.target.value))}
+                        onChange={(event) => setFirstName(event.target.value)}
                         variant="outlined"/>
                     </div>
                 <div className="formdecoration">
@@ -98,7 +113,7 @@ const CreateStudentAccount = () => {
                         label={"Middle Name"}
                         value={middleName}
                         placeholder={"your middle name"}
-                        onChange={(event => setMiddleName(event.target.value))}
+                        onChange={(event) => setMiddleName(event.target.value)}
                         variant="outlined"/>
                 </div>
                 <div className="formdecoration">
@@ -108,7 +123,7 @@ const CreateStudentAccount = () => {
                         label={"Last Name"}
                         value={lastName}
                         placeholder={"your last name"}
-                        onChange={(event => setLastName(event.target.value))}
+                        onChange={(event) => setLastName(event.target.value)}
                         variant="outlined"/>
                 </div>
                 <div className="formdecoration">
@@ -118,7 +133,7 @@ const CreateStudentAccount = () => {
                         label={"Email"}
                         value={email}
                         placeholder={"your email"}
-                        onChange={(event => setEmail(event.target.value))}
+                        onChange={(event) => setEmail(event.target.value)}
                         variant="outlined"/>
                 </div>
 
@@ -129,7 +144,7 @@ const CreateStudentAccount = () => {
                         label={"Department"}
                         value={department}
                         placeholder={"your department"}
-                        onChange={(event => setDepartment(event.target.value))}
+                        onChange={(event) => setDepartment(event.target.value)}
                         variant="outlined"/>
                     </div>
                         <div className="formdecoration">
@@ -139,7 +154,7 @@ const CreateStudentAccount = () => {
                         label={"Phone Number"}
                         value={phoneNumber}
                         placeholder={"your phone"}
-                        onChange={(event => setPhoneNumber(event.target.value))}
+                        onChange={(event) => setPhoneNumber(event.target.value)}
                         variant="outlined"/>
                         </div>
                 <div className="dateof">
@@ -150,7 +165,7 @@ const CreateStudentAccount = () => {
                         type={"date"}
                         autoFocus={true}
                         value={dateOfBirth}
-                        onChange={(event => setDateOfBirth(event.target.value))}
+                        onChange={(event) => setDateOfBirth(event.target.value)}
                         variant="outlined"/>
                             </div>
                 <div className="dateof">
@@ -161,7 +176,7 @@ const CreateStudentAccount = () => {
                         type={"date"}
                         autoFocus={true}
                         value={registrationDate}
-                        onChange={(event => setRegistrationDate(event.target.value))}
+                        onChange={(event) => setRegistrationDate(event.target.value)}
                         variant="outlined"/>
                                 </div>
                                     <div className="formdecoration">
@@ -171,7 +186,7 @@ const CreateStudentAccount = () => {
                         label={"password"}
                         value={password}
                         placeholder={" Enter new password"}
-                        onChange={(event => setPassword(event.target.value))}
+                        onChange={(event) => setPassword(event.target.value)}
                         variant="outlined"/>
                                     </div>
                 <div className="formdecoration">
@@ -182,21 +197,17 @@ const CreateStudentAccount = () => {
                         label={"Confirm password"}
                         value={confirmPassword}
                         placeholder={"Confirm your password"}
-                        onChange={(event => setConfirmPassword(event.target.value))}
+                        onChange={(event) => setConfirmPassword(event.target.value)}
                         variant="outlined"/>
                                         </div>
 
-                <Button className="nav"
-                        type="submit"
-                        fullWidth
-                        variant="contained"
-
-
-                        sx={{mt: 3, mb: 2}}
+                <button
+                        className={classes.button}
+                        variant={"contained"}
+                        color={"primary"}
                         onClick={() => setIsSubmitClicked(true)}>
-
-                    Sign In
-                </Button>
+                         Sign In
+                </button>
 
             </div>
 

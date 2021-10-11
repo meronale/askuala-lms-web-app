@@ -8,9 +8,25 @@ import {Route} from "react-router-dom";
 import {Router} from "@mui/icons-material";
 import {Button} from "@mui/material";
 import CreateContactUs from "../CreateContactUs/CreateContactUs";
+import {makeStyles} from "@mui/styles";
+import {useHistory} from "react-router";
 
+const useStyles= makeStyles(
+    ()=>({
+        textField: {
+            margin: 20
+        },
+        button:{
+            padding:2,
+            color:"#5B0A36"
+        }
+
+    }));
 
 const CreateTeacherAccount = () => {
+    let history = useHistory();
+
+    const  classes= useStyles();
     const [firstName, setFirstName] = useState('');
     const [middleName, setMiddleName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -26,12 +42,13 @@ const CreateTeacherAccount = () => {
     const [isSubmitClicked, setIsSubmitClicked] = useState(false);
 
 
-    useEffect(() => {
+    useEffect(() =>
+    {
         if (isSubmitClicked === true) {
 
             if (password === confirmPassword) {
                 axios.post(
-                    "https://askuala-web.herokuapp.com/api/teacherAccount/create",
+                    "http://localhost:8080/api/teacherAccount/create",
                     {
 
                         "firstName": firstName,
@@ -60,7 +77,8 @@ const CreateTeacherAccount = () => {
 
 
         }
-    }, [firstName, middleName, lastName, email, department, phoneNumber,certification,experience, dateOfBirth, registrationDate, password, confirmPassword, isSubmitClicked]);
+    }
+    , [firstName, middleName, lastName, email, department, phoneNumber,certification,experience, dateOfBirth, registrationDate, password, confirmPassword, isSubmitClicked]);
 
 
     return (
@@ -88,7 +106,7 @@ const CreateTeacherAccount = () => {
                             label={"First Name"}
                             value={firstName}
                             placeholder={"your name"}
-                            onChange={(event => setFirstName(event.target.value))}
+                            onChange={(event) => setFirstName(event.target.value)}
                             variant="outlined"/>
                     </div>
                     <div className="formdecoration">
@@ -98,7 +116,7 @@ const CreateTeacherAccount = () => {
                             label={"Middle Name"}
                             value={middleName}
                             placeholder={"your middle name"}
-                            onChange={(event => setMiddleName(event.target.value))}
+                            onChange={(event) => setMiddleName(event.target.value)}
                             variant="outlined"/>
                     </div>
                     <div className="formdecoration">
@@ -108,7 +126,7 @@ const CreateTeacherAccount = () => {
                             label={"Last Name"}
                             value={lastName}
                             placeholder={"your last name"}
-                            onChange={(event => setLastName(event.target.value))}
+                            onChange={(event) => setLastName(event.target.value)}
                             variant="outlined"/>
                     </div>
                     <div className="formdecoration">
@@ -118,7 +136,7 @@ const CreateTeacherAccount = () => {
                             label={"Email"}
                             value={email}
                             placeholder={"your email"}
-                            onChange={(event => setEmail(event.target.value))}
+                            onChange={(event) => setEmail(event.target.value)}
                             variant="outlined"/>
                     </div>
 
@@ -129,7 +147,7 @@ const CreateTeacherAccount = () => {
                             label={"Department"}
                             value={department}
                             placeholder={"your department"}
-                            onChange={(event => setDepartment(event.target.value))}
+                            onChange={(event) => setDepartment(event.target.value)}
                             variant="outlined"/>
                     </div>
                     <div className="formdecoration">
@@ -139,7 +157,7 @@ const CreateTeacherAccount = () => {
                             label={"experience"}
                             value={department}
                             placeholder={"your experience"}
-                            onChange={(event => setExperience(event.target.value))}
+                            onChange={(event) => setExperience(event.target.value)}
                             variant="outlined"/>
                     </div>
                     <div className="formdecoration">
@@ -149,7 +167,7 @@ const CreateTeacherAccount = () => {
                             label={"certification"}
                             value={department}
                             placeholder={"your certification"}
-                            onChange={(event => setCertification(event.target.value))}
+                            onChange={(event) => setCertification(event.target.value)}
                             variant="outlined"/>
                     </div>
                     <div className="formdecoration">
@@ -159,7 +177,7 @@ const CreateTeacherAccount = () => {
                             label={"Phone Number"}
                             value={phoneNumber}
                             placeholder={"your phone"}
-                            onChange={(event => setPhoneNumber(event.target.value))}
+                            onChange={(event) => setPhoneNumber(event.target.value)}
                             variant="outlined"/>
                     </div>
                     <div className="dateof">
@@ -170,7 +188,7 @@ const CreateTeacherAccount = () => {
                             type={"date"}
                             autoFocus={true}
                             value={dateOfBirth}
-                            onChange={(event => setDateOfBirth(event.target.value))}
+                            onChange={(event) => setDateOfBirth(event.target.value)}
                             variant="outlined"/>
                     </div>
                     <div className="dateof">
@@ -182,7 +200,7 @@ const CreateTeacherAccount = () => {
                             autoFocus={true}
                             value={registrationDate}
                             placeholder={"your phone"}
-                            onChange={(event => setRegistrationDate(event.target.value))}
+                            onChange={(event) => setRegistrationDate(event.target.value)}
                             variant="outlined"/>
                     </div>
                     <div className="formdecoration">
@@ -192,7 +210,7 @@ const CreateTeacherAccount = () => {
                             label={"password"}
                             value={password}
                             placeholder={" Enter new password"}
-                            onChange={(event => setPassword(event.target.value))}
+                            onChange={(event) => setPassword(event.target.value)}
                             variant="outlined"/>
                     </div>
                     <div className="formdecoration">
@@ -203,17 +221,21 @@ const CreateTeacherAccount = () => {
                             label={"Confirm password"}
                             value={confirmPassword}
                             placeholder={"Confirm your password"}
-                            onChange={(event => setConfirmPassword(event.target.value))}
+                            onChange={(event) => setConfirmPassword(event.target.value)}
                             variant="outlined"/>
                     </div>
                 </div>
                 <div className="register">
-                    <div className="reg">
-                        <button name="Register"
-                                value={isSubmitClicked}
-                                onClick={() => setIsSubmitClicked(true)}
+                    <div className="nav">
+                        <button
+                            className={classes.button}
+                            variant={"contained"}
+                            color={"primary"}
+                            onClick={() => setIsSubmitClicked(true)}
 
-                        >Register</button>
+                        >
+                            Create Account
+                        </button>
 
                     </div>
                 </div>
