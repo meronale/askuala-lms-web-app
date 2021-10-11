@@ -18,9 +18,16 @@ const useStyles= makeStyles(
             margin: 20
         },
         button:{
-            padding:2,
-            color:"#5B0A36"
-        }
+            padding:10,
+            color:"#5B0A36",
+            margin: 200,
+            marginLeft:950,
+            backgroundColor:"5B0A36",
+            marginTop:60
+
+
+        },
+
 
     }));
 
@@ -128,7 +135,7 @@ const CreateContactUs = () => {
                     </div>
                 </Box>
 
-                <div className="register">
+
                     <div className="nav">
                         <button
                         className={classes.button}
@@ -141,7 +148,8 @@ const CreateContactUs = () => {
                         </button>
 
                     </div>
-                </div>
+
+
             </div>
 
         </form>

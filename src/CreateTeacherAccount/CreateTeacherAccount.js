@@ -69,10 +69,12 @@ const CreateTeacherAccount = () => {
                     .then((response) => console.log(response.data))
                     .catch((error) => {
                         console.log(error);
+                        alert("not submitted correctly: " + error.error);
                     })
-
+                setIsSubmitClicked(false);
             } else {
                 alert("password and confirmed password mismatch!");
+                setIsSubmitClicked(false);
             }
 
 
@@ -155,7 +157,7 @@ const CreateTeacherAccount = () => {
                             type={"text"}
                             autoFocus={true}
                             label={"experience"}
-                            value={department}
+                            value={experience}
                             placeholder={"your experience"}
                             onChange={(event) => setExperience(event.target.value)}
                             variant="outlined"/>
@@ -165,7 +167,7 @@ const CreateTeacherAccount = () => {
                             type={"text"}
                             autoFocus={true}
                             label={"certification"}
-                            value={department}
+                            value={certification}
                             placeholder={"your certification"}
                             onChange={(event) => setCertification(event.target.value)}
                             variant="outlined"/>

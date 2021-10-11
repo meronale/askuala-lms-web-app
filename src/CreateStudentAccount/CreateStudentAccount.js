@@ -47,7 +47,7 @@ const CreateStudentAccount = () => {
 
 
                     axios.post(
-                        "http:localhost:8080/api/studentAccount/create",
+                        "http://localhost:8080/api/studentAccount/create",
                         {
 
                             "firstName": firstName,
@@ -206,7 +206,7 @@ const CreateStudentAccount = () => {
                         variant={"contained"}
                         color={"primary"}
                         onClick={() => setIsSubmitClicked(true)}>
-                         Sign In
+                     Create Account
                 </button>
 
             </div>
