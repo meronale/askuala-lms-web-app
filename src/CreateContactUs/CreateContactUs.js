@@ -59,7 +59,7 @@ const CreateContactUs = () => {
 
 
         }
-        },[fullName,email,message]);
+        },[fullName,email,message, isSubmitClicked]);
 
 
 
@@ -132,7 +132,7 @@ const CreateContactUs = () => {
 
                 <div className="register">
                     <div className="nav">
-                        <a href
+                        <button
                         className={classes.button}
                         variant={"contained"}
                         color={"primary"}
@@ -140,7 +140,7 @@ const CreateContactUs = () => {
 
                         >
                             send us comment
-                        </a>
+                        </button>
 
                     </div>
                 </div>
