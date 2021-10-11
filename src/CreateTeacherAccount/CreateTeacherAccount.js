@@ -76,7 +76,7 @@ const CreateTeacherAccount = () => {
                 alert("password and confirmed password mismatch!");
                 setIsSubmitClicked(false);
             }
-
+            history.push('/classes');
 
         }
     }
