@@ -49,45 +49,47 @@ const SignIn = () => {
     var flag = false;
 
     useEffect(() => {
-        if (isSubmitClicked === true) {
+        {
+            if (isSubmitClicked === true) {
 
-            if (roleType === 'teacherAccount') {
-                {
-                    data.map((row) => {
-                        if ((row.email === email) && (row.password === password)) {
-                            VariableGlobals.x = row.id;
-                            flag = true;
-                            setIsSubmitClicked(false);
-                            history.push('/classes');
-                        }
-                    })
+                if (roleType === 'teacherAccount') {
+                    {
+                        data.map((row) => {
+                            if ((row.email === email) && (row.password === password)) {
+                                VariableGlobals.x = row.id;
+                                flag = true;
+                                setIsSubmitClicked(false);
+                                history.push('/classes');
+                            }
+                        });
+                    }
+                } else if (roleType === 'studentAccount') {
+                    {
+                        data.map((row) => {
+                            if ((row.email === email) && (row.password === password)) {
+                                VariableGlobals.x = row.id;
+                                flag = true;
+                                setIsSubmitClicked(false);
+                                history.push('/ListStudents');
+                            }
+                        });
+                    }
+                } else if (roleType === 'admin') {
+                    {
+                        data.map((row) => {
+                            if ((row.email === email) && (row.password === password)) {
+                                VariableGlobals.x = row.id;
+                                flag = true;
+                                setIsSubmitClicked(false);
+                                history.push('/ListTeacher');
+                            }
+                        });
+                    }
                 }
-            } else if (roleType === 'studentAccount') {
-                {
-                    data.map((row) => {
-                        if ((row.email === email) && (row.password === password)) {
-                            VariableGlobals.x = row.id;
-                            flag = true;
-                            setIsSubmitClicked(false);
-                            history.push('/ListStudents');
-                        }
-                    })
+                if (flag === false) {
+                    alert("INCORRECT EMAIL OR PASSWORD");
+                    setIsSubmitClicked(false);
                 }
-            } else if (roleType === 'admin') {
-                {
-                    data.map((row) => {
-                        if ((row.email === email) && (row.password === password)) {
-                            VariableGlobals.x = row.id;
-                            flag = true;
-                            setIsSubmitClicked(false);
-                            history.push('/ListTeacher');
-                        }
-                    })
-                }
-            }
-            if (flag === false) {
-                alert("INCORRECT EMAIL OR PASSWORD");
-                setIsSubmitClicked(false);
             }
         }
     }, [email, password, isSubmitClicked]);
