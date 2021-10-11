@@ -9,10 +9,25 @@ import ListStudents from "../ListStudents/ListStudents";
 import thanks from "../Thanks/thanks";
 import Classes from "../Classes/Classes";
 import {Box, Button} from "@mui/material";
+import {makeStyles} from "@mui/styles";
+import {useHistory} from "react-router";
 
+const useStyles= makeStyles(
+    ()=>({
+        textField: {
+            margin: 20
+        },
+        button:{
+            padding:2,
+            color:"#5B0A36"
+        }
 
+    }));
 
 const CreateContactUs = () => {
+    let history = useHistory();
+
+    const  classes= useStyles();
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
@@ -21,24 +36,32 @@ const CreateContactUs = () => {
 
     useEffect(() => {
         if (isSubmitClicked === true) {
-            if(TextField === ""){
-                // string is empty, do something
 
-                axios.post(
-                    "https://askuala-web.herokuapp.com/api/contactUs/create",
-                    {
 
-                        "fullName": fullName,
-                        "email": email,
-                        "message": message,
+            axios.post(
+                "http://localhost:8080/api/contactUs/create",
+                {
 
-                    })
+                    "fullName": fullName,
+                    "email": email,
+                    "message": message,
+                }
 
-        }else {
-                alert("empity string");
-            }}
+            )
 
-    }, [fullName,  email, message, isSubmitClicked]);
+                .then((response) => console.log(response.data))
+                .catch((error) => {
+                    console.log(error);
+                    alert("not submitted correctly: " + error.error);
+                })
+
+
+
+
+        }
+        },[fullName,email,message]);
+
+
 
 
     return (
@@ -62,24 +85,26 @@ const CreateContactUs = () => {
                 <div className="formdecoration">
 
                     <TextField
+                        className={classes.textField}
                         type={"text"}
                         autoFocus={true}
                         label={"Full Name"}
+
                         value={fullName}
                         placeholder={"your name"}
-                        onChange={(event => setFullName(event.target.value))}
+                        onChange={(event)=>setFullName(event.target.value)}
                         variant="outlined"/>
 
                 </div>
                 <div className="formdecoration">
                     <TextField
-                        error
+
                         type={"email"}
                         autoFocus={true}
                         label={"Email"}
                         value={email}
                         placeholder={"your email"}
-                        onChange={(event => setEmail(event.target.value))}
+                        onChange={(event)=>setEmail(event.target.value)}
                         variant="outlined"/>
                 </div>
                 <Box
@@ -99,7 +124,7 @@ const CreateContactUs = () => {
                         multiline
                         value={message}
                         rows={8}
-                        onChange={(event => setMessage(event.target.value))}
+                        onChange={(event)=>setMessage(event.target.value)}
                         variant="outlined"/>
 
                     </div>
@@ -108,9 +133,14 @@ const CreateContactUs = () => {
                 <div className="register">
                     <div className="nav">
                         <a href
-                           value={isSubmitClicked}
-                           onClick={() => setIsSubmitClicked(true)}
-                        >Submit</a>
+                        className={classes.button}
+                        variant={"contained"}
+                        color={"primary"}
+                        onClick={() => setIsSubmitClicked(true)}
+
+                        >
+                            send us comment
+                        </a>
 
                     </div>
                 </div>
@@ -144,6 +174,7 @@ const CreateContactUs = () => {
     </Router>
 </>
     );
+
 
 
 

@@ -29,7 +29,7 @@ const CreateStudentAccount = () => {
 
             if (password === confirmPassword) {
                 axios.post(
-                    "https://askuala-web.herokuapp.com/api/studentAccount/create",
+                    "http:localhost:8080/api/studentAccount/create",
                     {
 
                         "firstName": firstName,
@@ -45,16 +45,20 @@ const CreateStudentAccount = () => {
 
                     }
                 )
-                    .then((response) => console.log(response.data))
+                    .then((response) => {
+                            console.log(response.data);
+                            alert("Account is created with id: " + response.data.id);
+                        }
+                    )
                     .catch((error) => {
                         console.log(error);
+                        //alert(error.error);
                     })
-
+                setIsSubmitClicked(false);
             } else {
-                alert("password and confirmed password mismatch!");
+                alert("Password and Confirm Password are not the same!");
+                setIsSubmitClicked(false)
             }
-
-
         }
     }, [firstName, middleName, lastName, email, department, phoneNumber, dateOfBirth, registrationDate, password, confirmPassword, isSubmitClicked]);
 
@@ -170,7 +174,7 @@ const CreateStudentAccount = () => {
                         onChange={(event => setPassword(event.target.value))}
                         variant="outlined"/>
                                     </div>
-                                        <div className="formdecoration">
+                <div className="formdecoration">
 
                     <TextField
                         type={"password"}
@@ -182,17 +186,17 @@ const CreateStudentAccount = () => {
                         variant="outlined"/>
                                         </div>
 
-                <div className="register">
-                    <div className="reg">
-                        <button name="Register"
-                           value={isSubmitClicked}
-                           onClick={() => setIsSubmitClicked(true)}
+                <Button className="nav"
+                        type="submit"
+                        fullWidth
+                        variant="contained"
 
-                        >Register</button>
 
-                    </div>
+                        sx={{mt: 3, mb: 2}}
+                        onClick={() => setIsSubmitClicked(true)}>
 
-                </div>
+                    Sign In
+                </Button>
 
             </div>
 

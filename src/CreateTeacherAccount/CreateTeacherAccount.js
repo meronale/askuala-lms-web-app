@@ -139,7 +139,7 @@ const CreateTeacherAccount = () => {
                             label={"experience"}
                             value={department}
                             placeholder={"your experience"}
-                            onChange={(event => setDepartment(event.target.value))}
+                            onChange={(event => setExperience(event.target.value))}
                             variant="outlined"/>
                     </div>
                     <div className="formdecoration">
@@ -149,7 +149,7 @@ const CreateTeacherAccount = () => {
                             label={"certification"}
                             value={department}
                             placeholder={"your certification"}
-                            onChange={(event => setDepartment(event.target.value))}
+                            onChange={(event => setCertification(event.target.value))}
                             variant="outlined"/>
                     </div>
                     <div className="formdecoration">

@@ -9,6 +9,9 @@ import ListStudents from "./ListStudents/ListStudents";
 import Classes from "./Classes/Classes";
 import CreateTeacherAccount from "./CreateTeacherAccount/CreateTeacherAccount";
 import ListTeachers from "./ListTeachers/ListTeachers";
+import Login from "./Login/Login";
+import SignIn from "./Login/SignIn";
+import Job from "./Job/Job";
 function App() {
 
     return (
@@ -39,8 +42,21 @@ function App() {
                         <Classes />
 
                     </Route>
+                    <Route path="/SignIn">
 
+                        <SignIn />
 
+                    </Route>
+                    <Route path="/Login">
+
+                        <Login />
+
+                    </Route>
+                    <Route path="/Job">
+
+                        <Job />
+
+                    </Route>
 
                 </switch>
                     <switch>
@@ -55,6 +71,9 @@ function App() {
                                         <a href="/CreateContactUs">Contact Us</a>
                                         <a href="/ListStudents">Students</a>
                                         <a href="/ListTeachers">Teachers</a>
+                                        <a href="/Login">Login</a>
+                                        <a href="/SignIn">SignIn</a>
+                                    <a href="/Job">jo</a>
 
                                     </div>
                             </div>
