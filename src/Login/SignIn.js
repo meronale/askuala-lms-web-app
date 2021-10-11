@@ -54,7 +54,7 @@ const SignIn = () => {
 
                 if (roleType === 'teacherAccount') {
                     {
-                        data.map((row) => {
+                        data.forEach((row) => {
                             if ((row.email === email) && (row.password === password)) {
                                 VariableGlobals.x = row.id;
                                 flag = true;
@@ -65,7 +65,7 @@ const SignIn = () => {
                     }
                 } else if (roleType === 'studentAccount') {
                     {
-                        data.map((row) => {
+                        data.forEach((row) => {
                             if ((row.email === email) && (row.password === password)) {
                                 VariableGlobals.x = row.id;
                                 flag = true;
@@ -76,7 +76,7 @@ const SignIn = () => {
                     }
                 } else if (roleType === 'admin') {
                     {
-                        data.map((row) => {
+                        data.forEach((row) => {
                             if ((row.email === email) && (row.password === password)) {
                                 VariableGlobals.x = row.id;
                                 flag = true;
