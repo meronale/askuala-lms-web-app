@@ -224,7 +224,7 @@ const CreateTeacherAccount = () => {
                             onChange={(event) => setConfirmPassword(event.target.value)}
                             variant="outlined"/>
                     </div>
-                </div>
+
                 <div className="register">
                     <div className="nav">
                         <button
@@ -240,7 +240,7 @@ const CreateTeacherAccount = () => {
                     </div>
                 </div>
 
-
+                </div>
 
             </form>
 

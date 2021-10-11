@@ -1,6 +1,6 @@
 {
   "name": "askuala-lms-web-app-main",
-  "homepage": "https://github.com/meronale/askuala-lms-web-app/",
+  "homepage": "https://meronale.github.io/askuala-lms-web-app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -38,7 +38,7 @@
   },
 
   "rules": {
-    "no-lone-blocks": "error"  
+    "no-lone-blocks": "error"
   },
 
   "eslintConfig": {
